@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./resources/css/style.css">
+  <title>COVID 19 STATS</title>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="./resources/img/logo.png" alt="logo - virus icon">
+    <p class='eng'>COVID-19<br/>STATISTICS</p>
+    <p class='ltu hide'>COVID-19<br/>STATISTIKA</p>
+  </div>
+  <nav>
+    <ul>
+      <li id="ltu"><span><img src="./resources/lt.svg" alt="Lithuania Flag">LT</span></li>
+      <li id="eng"><span><img src="./resources/img/gb.svg" alt="UK Flag">EN</span></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="stats">
+    <div class="latest-report">
+      <div class="country">
+        <div class="name">Loading ...</div>
+        <div class="change-country eng">change</div>
+        <div class="change-country ltu hide">pakeisti</div>
+        <div class="search-country hide">
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="search country ...">
+            <img src="./resources/img/close.svg" alt="close box" class="close">
+          </div>
+          <div class="country-list">
+          </div>
+        </div>
+      </div>
+      <div class="total-cases">
+        <div class="title eng">Total Cases</div>
+        <div class="title ltu hide">Viso susirgimų</div>
+        <div class="value">0</div>
+        <div class="new-value">+0</div>
+      </div>
+      <div class="recovered">
+        <div class="title eng">Recovered</div>
+        <div class="title ltu hide">Pasveiko</div>
+        <div class="value">0</div>
+        <div class="new-value">+0</div>
+      </div>
+      <div class="deaths">
+        <div class="title eng">Deaths</div>
+        <div class="title ltu hide">Mirė</div>
+        <div class="value">0</div>
+        <div class="new-value">+0</div>
+      </div>
+    </div>
+    <div class="chart">
+      <canvas id="axes_line_chart"></canvas>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="footer-container">
+    <div class="copyright">
+      <p>Copyright &copy; Code Explained. Created V. Roman 2020</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="./resources/js/countries.js"></script>
+<script src="./resources/js/app.js"></script>
+</body>
+</html>
