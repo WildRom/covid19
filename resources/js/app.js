@@ -91,7 +91,7 @@ function updateStats() {
   recovered_element.innerHTML = (last_entry.total_recovered.replace(/,/g, '.') || 0) + ` (${recovered_percent}%)`;
   new_recovered_element.innerHTML = `+${parseInt(last_entry.total_recovered.replace(/,/g, '')) - parseInt(before_last_entry.total_recovered.replace(/,/g, '')) || 0} `;
 
-  deaths_element.innerHTML = (last_entry.total_deaths.replace(/,/g, '.') || 0) + ` (${deaths_percent} %)`;
+  deaths_element.innerHTML = (last_entry.total_deaths.replace(/,/g, '.') || 0) + ` (${deaths_percent}%)`;
   new_deaths_element.innerHTML = `+${last_entry.new_deaths || 0}`;
 }
 
