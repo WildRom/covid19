@@ -71,12 +71,6 @@ function updateUI() {
 function updateStats() {
   let last_entry = app_data[app_data.length - 1];
   let before_last_entry = app_data[app_data.length - 2];
-  // console.log('recovered:'+last_entry.total_recovered);
-  // console.log('new_cases:'+last_entry.new_cases);
-  // console.log('new_deaths:'+last_entry.new_deaths);
-  // console.log('yesterday recovered:'+before_last_entry.total_recovered);
-  // console.log('yesterday_new_cases:'+before_last_entry.new_cases);
-  // console.log('yesterday_new_death:'+before_last_entry.new_deaths);
   let total = parseInt(last_entry.total_cases.replace(/,/g, ''));
   let recovered = parseInt(last_entry.total_recovered.replace(/,/g, '')) || '';
   let deaths = parseInt(last_entry.total_deaths.replace(/,/g, ''));
