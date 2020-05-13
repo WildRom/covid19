@@ -16,7 +16,7 @@ let app_data = [],
     dates = [];
 
 // GET USERS COUNTRY CODE
-console.log(geoplugin_countryCode() ? geoplugin_countryCode() : 'GB');
+// console.log(geoplugin_countryCode() ? geoplugin_countryCode() : 'GB');
 let country_code = (geoplugin_countryCode()) ? geoplugin_countryCode() : 'GB';
 let user_country;
 country_list.forEach(country => {
@@ -77,16 +77,21 @@ function updateStats() {
   // console.log('yesterday recovered:'+before_last_entry.total_recovered);
   // console.log('yesterday_new_cases:'+before_last_entry.new_cases);
   // console.log('yesterday_new_death:'+before_last_entry.new_deaths);
+  let total = parseInt(last_entry.total_cases.replace(/,/g, ''));
+  let recovered = parseInt(last_entry.total_recovered.replace(/,/g, '')) || '';
+  let deaths = parseInt(last_entry.total_deaths.replace(/,/g, ''));
+  let recovered_percent = (recovered && total) ? (recovered * 100 / total).toFixed(2) : '';
+  let deaths_percent = (deaths && total) ? (deaths * 100 / total).toFixed(2) : '';
 
   country_name_element.innerHTML = last_entry.country_name;
 
   total_cases_element.innerHTML = last_entry.total_cases.replace(/,/g, '.') || 0;
   new_cases_element.innerHTML = `+${last_entry.new_cases || 0}`;
 
-  recovered_element.innerHTML = last_entry.total_recovered.replace(/,/g, '.') || 0;
+  recovered_element.innerHTML = (last_entry.total_recovered.replace(/,/g, '.') || 0) + ` (${recovered_percent}%)`;
   new_recovered_element.innerHTML = `+${parseInt(last_entry.total_recovered.replace(/,/g, '')) - parseInt(before_last_entry.total_recovered.replace(/,/g, '')) || 0} `;
 
-  deaths_element.innerHTML = last_entry.total_deaths.replace(/,/g, '.');
+  deaths_element.innerHTML = (last_entry.total_deaths.replace(/,/g, '.') || 0) + ` (${deaths_percent} %)`;
   new_deaths_element.innerHTML = `+${last_entry.new_deaths || 0}`;
 }
 
@@ -141,4 +146,5 @@ fetch(`https://covid19-monitor-pro.p.rapidapi.com/coronavirus/cases_by_days_by_c
 			"x-rapidapi-key": "7e269ec140msh8a5df9cfc21b4b4p1c1e3ejsn9aba26afc6e0"
 		}
 	})
+
 */
